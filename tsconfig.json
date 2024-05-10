@@ -5,6 +5,17 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "paths": {
+      "@pages" : ["./src/pages"],
+      // "@service" : ["./src/service"],
+      "@router" : ["./src/router"],
+      // "@validations" : ["./src/utils/validations.ts"],
+      // "@auth-interface" : ["./src/interfaces/auth.ts"],
+      // "@services-interface" : ["./src/interfaces/services.ts"],
+      // "@global-interface" : ["./src/interfaces/global.ts"],
+      // "@modals" : ["./src/components/modals"],
+      // "@data-service" : ["./src/utils/data-service.ts"],
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
