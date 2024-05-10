@@ -1,7 +1,9 @@
+import Layout from "../../components/ui/layout"
+
 const Index = () => {
     return (
         <div>
-            <h1>MainLayout</h1>
+            <Layout/>
         </div>
     )
 }

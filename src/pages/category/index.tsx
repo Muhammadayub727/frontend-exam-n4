@@ -1,7 +1,7 @@
 const Index = () => {
     return (
         <div>
-            <h1>Workers</h1>
+            <h1>Category</h1>
         </div>
     )
 }

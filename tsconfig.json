@@ -7,14 +7,14 @@
     "skipLibCheck": true,
     "paths": {
       "@pages" : ["./src/pages"],
-      // "@service" : ["./src/service"],
+      "@service" : ["./src/service"],
       "@router" : ["./src/router"],
-      // "@validations" : ["./src/utils/validations.ts"],
-      // "@auth-interface" : ["./src/interfaces/auth.ts"],
-      // "@services-interface" : ["./src/interfaces/services.ts"],
-      // "@global-interface" : ["./src/interfaces/global.ts"],
+      "@validations" : ["./src/utils/validations.ts"],
+      "@auth-interface" : ["./src/interfaces/auth.ts"],
       // "@modals" : ["./src/components/modals"],
-      // "@data-service" : ["./src/utils/data-service.ts"],
+      "@data-service" : ["./src/utils/data-service.ts"],
+      "@services-interface" : ["./src/interfaces/services.ts"],
+      "@global-interface" : ["./src/interfaces/global.ts"],
     },
 
     /* Bundler mode */
