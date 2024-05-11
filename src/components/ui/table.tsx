@@ -11,7 +11,7 @@ import { TableProps } from "@global-interface"
 import  { Skeleton } from "@mui/material"
 import del from "../../assets/images/delete.svg"
 import edit from "../../assets/images/edit.svg"
-import services from "../../service/services"
+// import services from "../../service/services"
 
 
 

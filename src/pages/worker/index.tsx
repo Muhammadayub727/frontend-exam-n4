@@ -10,7 +10,7 @@ import  SearchIcon from "@mui/icons-material/Search"
 const Index = () => {
     const [data,setData] = useState([])
     const [isLoading,setLoading] = useState(false)
-    const [params,setParams] = useState({
+    const [params] = useState({
         email:"string",
         first_name:"string",
         last_name:"string",
