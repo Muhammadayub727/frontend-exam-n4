@@ -6,8 +6,14 @@ export interface PostParams {
     password:string
 }
 
+interface GetParams{
+    page:number,
+    limit:number
+}
+
 
 
 export interface Request{
     post_workers:(params:PostParams)=>any,
+    get_worker:(params:GetParams)=>any,
 }

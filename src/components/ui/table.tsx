@@ -76,9 +76,7 @@ const GlobalTable = ({headers, body,isLoading} : TableProps) => {
                                                             onClick={()=>editItem(item.id)} 
                                                         />
                                                     </div>
-                                                ) : item[header.value].title ? (
-                                                    item[header.value].title
-                                                ) : (
+                                                ): header.value === "index" ? index + 1 : (
                                                     item[header.value]
                                                 )}
                                             </TableCell>
