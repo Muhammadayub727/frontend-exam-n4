@@ -1,7 +1,7 @@
 import React from "react";
 import DashboardCustomizeRoundedIcon from '@mui/icons-material/DashboardCustomizeRounded';
-import DryCleaningIcon from '@mui/icons-material/DryCleaning';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import CategoryIcon from '@mui/icons-material/Category';
+import GroupIcon from '@mui/icons-material/Group';
 
 
 
@@ -20,12 +20,12 @@ export const routes: Route[] = [
     {
         path: "/main/category",
         content: "Category",
-        icon: <PersonOutlineIcon/>
+        icon: <CategoryIcon/>
     },
     {
         path: "/main/workers",
         content: "Workers",
-        icon: <DryCleaningIcon/>
+        icon: <GroupIcon/>
     },
 ]
 

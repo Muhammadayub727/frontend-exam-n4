@@ -30,7 +30,7 @@ const handleClose = () => {
 
 const logout = () =>{
     removeDataFromCookie("token")
-    navigate("/signin")
+    navigate("/")
     window.location.reload()
 }
 

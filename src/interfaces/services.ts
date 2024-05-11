@@ -1,12 +1,13 @@
-// export interface GetParams {
-//     limit : number,
-//     page : number,
-//     owner_email : string | undefined
-// }
+export interface PostParams {
+    email:string,
+    first_name:string,
+    gender:string,
+    last_name:string,
+    password:string
+}
 
 
 
-// export interface Request{
-//     get_services:(params:GetParams)=>any,
-//     delete_service:(id:string)=>any
-// }
+export interface Request{
+    post_workers:(params:PostParams)=>any,
+}

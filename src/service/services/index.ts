@@ -1,10 +1,9 @@
-// import request from "../config";
-// import { Request } from "@services-interface";
+import request from "../config";
+import { Request } from "@services-interface";
 
 
-// const services:Request = {
-//     get_services:(params) => request.get("/service/get-all",{params}),
-//     delete_service:(id) => request.post(`/service?id=d${id}`),
-// }
+const services:Request = {
+    post_workers:(params) => request.post("/v1/worker",{params}),
+}
 
-// export default services 
+export default services 

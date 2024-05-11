@@ -28,9 +28,9 @@ const Index = () => {
     const handleSubmit = async(values:SignIn) =>{
         try {
             const response = await auth.sign_in(values)
-            if (response.status === 201) {
+            if (response.status === 200) {
                 
-                setDataToCookie("email",response.data.email)
+                setDataToCookie("id",response.data.email)
                 setDataToCookie("token",response.data.access_token)
                 Notification({title:"Tizimga muvaffaqiyatli kirdingiz",type:"success"})
                 setTimeout(()=>{navigate("/main")},1000)
@@ -44,10 +44,8 @@ const Index = () => {
     return (
         <>
             <ToastContainer/>
-            {/* <ForgotPassword open={modal} handleClose={() => setModal(false)}/> */}
             <div className="h-screen flex items-center justify-center flex-col gap-8 p-5">
                 <h1 className="text-[35px] font-bold sm:text-[40px] md:text-[50px]">Tizimga kirish</h1>
-                {/* <button onClick={() => setModal(true)}>Open</button> */}
                 <div className="max-w-[600px]">
                     <Formik
                         initialValues={initialValues}
