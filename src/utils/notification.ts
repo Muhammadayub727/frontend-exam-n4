@@ -6,7 +6,7 @@ interface NotificationProp{
     type : TypeOptions | undefined
 }
 
-const Notification = (prop : NotificationProp) => {
+export const Notification = (prop : NotificationProp) => {
     return toast(prop.title, {
         position: "top-right",
         autoClose: 3000,
@@ -20,5 +20,3 @@ const Notification = (prop : NotificationProp) => {
         type : prop.type
     });
 }
-
-export default Notification

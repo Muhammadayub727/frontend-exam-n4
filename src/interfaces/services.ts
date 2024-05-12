@@ -13,7 +13,9 @@ interface GetParams{
 
 
 
+
 export interface Request{
-    post_workers:(params:PostParams)=>any,
+    post_worker:(params:PostParams)=>any,
     get_worker:(params:GetParams)=>any,
+    del_worker:(id:string) => any,
 }

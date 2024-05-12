@@ -11,7 +11,10 @@ import { TableProps } from "@global-interface"
 import  { Skeleton } from "@mui/material"
 import del from "../../assets/images/delete.svg"
 import edit from "../../assets/images/edit.svg"
-// import services from "../../service/services"
+import services from "../../service/services"
+import { Notification } from "../../utils/notification"
+import { ToastContainer } from "react-toastify"
+
 
 
 
@@ -20,14 +23,23 @@ const GlobalTable = ({headers, body,isLoading} : TableProps) => {
 
 
     const deleteItem = (id:string) => {
-        console.log(id)
+        try {
+            Notification({title:"Ma'lumot muvaffaqiyatli o'chdi",type:"success"})
+            services.del_worker(id)
+            
+        } catch (error) {
+            console.log(error)
+        }
+        setTimeout(()=>{window.location.reload()},300)
     }
     const editItem = (id:string) => {
         console.log(id)
     }
 
     return (
-        <Box sx={{width: "100%"}}>
+        <>
+        <ToastContainer/>
+            <Box sx={{width: "100%"}}>
             <Paper sx={{width: "100%", mb: 2}}>
                 <TableContainer>
                     <Table
@@ -89,6 +101,8 @@ const GlobalTable = ({headers, body,isLoading} : TableProps) => {
                 </TableContainer>
             </Paper>
         </Box>
+
+        </>
     )
 }
 

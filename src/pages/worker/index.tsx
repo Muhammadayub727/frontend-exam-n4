@@ -10,15 +10,7 @@ import {Worker} from "@modals"
 const Index = () => {
     const [data,setData] = useState([])
     const [isLoading,setLoading] = useState(false)
-    // const [modal,setModal] = useState(false)
-
-    // const [params] = useState({
-    //     email:"string",
-    //     first_name:"string",
-    //     last_name:"string",
-    //     gender:"string",
-    //     password:"string",
-    // })
+    
 
     const getData = async () => {
         setLoading(true)
@@ -49,7 +41,7 @@ const Index = () => {
         { title: "Familyasi", value:"last_name" },
         { title: "gender", value:"gender" },
         { title: "Email", value:"email" },
-        { title: "", value:"action" },
+        { title: "Action", value:"action" },
     ]
 
 

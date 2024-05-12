@@ -4,6 +4,16 @@ export interface ModalProps {
 }
 
 
+
+export interface createWorkers{
+        email: string,
+        first_name: string,
+        gender: string,
+        last_name: string,
+        password: string
+}
+
+
 interface Header{
     title : string
     value : string
