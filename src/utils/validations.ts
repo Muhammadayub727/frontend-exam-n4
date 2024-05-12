@@ -23,3 +23,11 @@ export const validationSchemaWorker = Yup.object().shape({
 
 })
 
+
+//////////////////////////////////Category///////////////////////////
+export const validationSchemaCategory = Yup.object().shape({
+    category_name: Yup.string().required("Category name required"),
+})
+
+
+

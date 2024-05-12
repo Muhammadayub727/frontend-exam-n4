@@ -13,8 +13,8 @@ const index = () => {
             <Route path="/" element={<App />}>
                 <Route index element={<Login />} />
                 <Route path="/main/*" element={<MainLayout />}>
-                    <Route index element={<Products />} />
-                    <Route path="category" element={<Category/>}/>
+                    <Route path="products" element={<Products />} />
+                    <Route index element={<Category/>}/>
                     <Route path="workers" element={<Worker />} />
                 </Route>
                 <Route path="*" element={<Error/>}/>

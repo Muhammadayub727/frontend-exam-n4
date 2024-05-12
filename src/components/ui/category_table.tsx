@@ -13,13 +13,13 @@ import del from "../../assets/images/delete.svg"
 import services from "../../service/services"
 import { Notification } from "../../utils/notification"
 import { ToastContainer } from "react-toastify"
-import { Edit } from "@modals"
+// import { Edit } from "@modals"
 
 
 
 
 
-const GlobalTable = ({headers, body,isLoading} : TableProps) => {
+const GlobalTableCategory = ({headers, body,isLoading} : TableProps) => {
 
 
     const deleteItem = (id:string) => {
@@ -88,7 +88,7 @@ const GlobalTable = ({headers, body,isLoading} : TableProps) => {
                                                             onClick={()=>editItem(item.id)} 
                                                             
                                                         /> */}
-                                                        <Edit/>
+                                                        {/* <Edit/> */}
                                                     </div>
                                                 ): header.value === "index" ? index + 1 : (
                                                     item[header.value]
@@ -108,4 +108,4 @@ const GlobalTable = ({headers, body,isLoading} : TableProps) => {
     )
 }
 
-export default GlobalTable
+export default GlobalTableCategory

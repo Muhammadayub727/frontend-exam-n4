@@ -18,4 +18,5 @@ export interface Request{
     post_worker:(params:PostParams)=>any,
     get_worker:(params:GetParams)=>any,
     del_worker:(id:string) => any,
+    update_worker:(id:string)=>any,
 }

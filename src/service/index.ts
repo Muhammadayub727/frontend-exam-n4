@@ -1,4 +1,5 @@
 import auth from "./auth";
 import services from "./services";
+import category from "./category"
 
-export {auth,services}
+export {auth,services,category}

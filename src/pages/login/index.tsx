@@ -1,5 +1,5 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material"
-import { Button, IconButton, InputAdornment, TextField } from "@mui/material"
+import { Button, Checkbox, FormControlLabel, Grid, IconButton, InputAdornment, Link, TextField,Typography } from "@mui/material"
 import { ErrorMessage, Field, Form, Formik } from "formik"
 import { signInValidationSchema } from "@validations"
 import { useState } from "react"
@@ -9,6 +9,28 @@ import { Notification } from "../../utils/notification"
 import { ToastContainer } from "react-toastify"
 import { useNavigate } from "react-router-dom"
 import { setDataToCookie } from "@data-service"
+import Avatar from '@mui/material/Avatar';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+
+
+
+
+
+function Copyright(props: any) {
+    return (
+        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        {'Copyright © '}
+        <Link color="inherit" href="https://mui.com/">
+            Your Website
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
+        </Typography>
+    );
+}
+
+
+
 
 const Index = () => {
 
@@ -45,8 +67,14 @@ const Index = () => {
         <>
             <ToastContainer/>
             <div className="h-screen flex items-center justify-center flex-col gap-8 p-5">
-                <h1 className="text-[35px] font-bold sm:text-[40px] md:text-[50px]">Tizimga kirish</h1>
-                <div className="max-w-[600px]">
+                {/* <h1 className="text-[35px] font-bold sm:text-[40px] md:text-[50px]">Tizimga kirish</h1> */}
+                    <Avatar sx={{bgcolor: 'secondary.main' }}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h3" variant="h3">
+                        Sign in
+                    </Typography>
+                <div className="max-w-[400px]">
                     <Formik
                         initialValues={initialValues}
                         validationSchema={signInValidationSchema}
@@ -95,7 +123,12 @@ const Index = () => {
                                             )
                                         }}
                                     />
-                                    <Button
+                                        <FormControlLabel
+                                            control={<Checkbox value="remember" color="primary" />}
+                                            label="Remember me"
+                                            
+                                        />
+                                        <Button
                                         type="submit" 
                                         variant="contained" 
                                         color="primary"
@@ -104,6 +137,19 @@ const Index = () => {
                                     >
                                         {isSubmitting ? "Submitting" : "Submit"}
                                     </Button>
+                                    <Grid container>
+                                        <Grid item xs>
+                                        <Link href="#" variant="body2">
+                                            Forgot password?
+                                        </Link>
+                                        </Grid>
+                                        <Grid item>
+                                        <Link href="#" variant="body2">
+                                            {"Don't have an account? Sign Up"}
+                                        </Link>
+                                        </Grid>
+                                    </Grid>
+                                    <Copyright sx={{ mt: 5 }} />
                                 </Form>
                             )}
                     </Formik>
@@ -114,4 +160,3 @@ const Index = () => {
 }
 
 export default Index
-

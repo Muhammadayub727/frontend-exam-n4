@@ -14,13 +14,13 @@ interface Route {
 export const routes: Route[] = [
     {
         path: "/main",
-        content: "Products",
-        icon: <DashboardCustomizeRoundedIcon/>
-    },
-    {
-        path: "/main/category",
         content: "Category",
         icon: <CategoryIcon/>
+    },
+    {
+        path: "/main/products",
+        content: "Products",
+        icon: <DashboardCustomizeRoundedIcon/>
     },
     {
         path: "/main/workers",

@@ -7,9 +7,8 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import { TextField } from '@mui/material';
 import { validationSchemaWorker } from '@validations';
 import { createWorkers } from '@global-interface';
+import edit from "../../../assets/images/edit.svg"
 import services from '../../../service/services';
-import { Notification } from '../../../utils/notification';
-import { ToastContainer } from 'react-toastify';
 
     const style = {
     position: 'absolute' as 'absolute',
@@ -18,7 +17,6 @@ import { ToastContainer } from 'react-toastify';
     transform: 'translate(-50%, -50%)',
     width: 500,
     bgcolor: 'background.paper',
-    // border: '2px solid #000',
     boxShadow: 24,
     borderRadius:3,
     p: 4,
@@ -40,19 +38,11 @@ export default function KeepMountedModal() {
         last_name:"",
         password:""
     }
-
-
-    // const handleSubmit = (e:any) => {
-    //     console.log(e);
-        
-    //     services.post_worker(e)
-    // }
     const handleSubmit = async (values: createWorkers) => {
         try {
             console.log(values);
             const res = await services.post_worker(values);
             console.log(res)
-            Notification({title:"Ma'lumot muvaffaqiyatli qo'shildi",type:"success"})
             handleClose(); 
             setTimeout(()=>{window.location.reload()},300)
         } catch (error) {
@@ -61,11 +51,10 @@ export default function KeepMountedModal() {
     }
 
     return (
-        <>
-        <ToastContainer/>
-        <Button type="submit" variant="contained" color="primary"  onClick={handleOpen}>
-            Add Worker
-        </Button>
+        <div>
+            <img src={edit} 
+            alt="Edit" 
+            onClick={handleOpen} />
         <Modal
             keepMounted
             open={open}
@@ -175,6 +164,7 @@ export default function KeepMountedModal() {
                     </Formik>
             </Box>
         </Modal>
-        </>
+        </div>
     );
 }
+
