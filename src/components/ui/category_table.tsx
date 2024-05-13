@@ -12,8 +12,8 @@ import  { Skeleton } from "@mui/material"
 import del from "../../assets/images/delete.svg"
 import { Notification } from "../../utils/notification"
 import { ToastContainer } from "react-toastify"
-import { Edit } from "@modals"
-import category from "../../service/category"
+import { CategoryEdit } from "@modals"
+import { category } from "@service"
 
 
 
@@ -24,8 +24,10 @@ const GlobalTableCategory = ({headers, body,isLoading} : TableProps) => {
 
     const deleteItem = (id:string) => {
         try {
+            console.log(id)
             Notification({title:"Ma'lumot muvaffaqiyatli o'chdi",type:"success"})
             category.del_category(id)
+            
             
         } catch (error) {
             console.log(error)
@@ -78,9 +80,9 @@ const GlobalTableCategory = ({headers, body,isLoading} : TableProps) => {
                                                         <img 
                                                             src={del} 
                                                             alt="Delete" 
-                                                            onClick={()=>deleteItem(item.id)} 
+                                                            onClick={()=> deleteItem(item?.category_id)} 
                                                         />
-                                                        <Edit/>
+                                                        <CategoryEdit/>
                                                     </div>
                                                 ): header.value === "index" ? index + 1 : (
                                                     item[header.value]

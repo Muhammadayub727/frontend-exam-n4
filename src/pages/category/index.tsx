@@ -64,7 +64,7 @@ const Index = () => {
                 </div>
                 <Category/>
             </div>
-            <GlobalTableCategory headers={headers} body={data} isLoading={isLoading}/>
+            <GlobalTableCategory headers={headers} body={data} isLoading={isLoading} />
         </>
     )
 }
