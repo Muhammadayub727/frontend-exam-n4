@@ -18,7 +18,7 @@ const Index = () => {
             const respons = await category.get_category({page:1, limit:10})
             console.log(respons);
             if(respons.status === 200){
-                setData(respons.data.user)
+                setData(respons.data.categories)
                 setLoading(false)
             }
 

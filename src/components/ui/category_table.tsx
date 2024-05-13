@@ -10,10 +10,10 @@ import  Paper from "@mui/material/Paper"
 import { TableProps } from "@global-interface"
 import  { Skeleton } from "@mui/material"
 import del from "../../assets/images/delete.svg"
-import services from "../../service/services"
 import { Notification } from "../../utils/notification"
 import { ToastContainer } from "react-toastify"
-// import { Edit } from "@modals"
+import { Edit } from "@modals"
+import category from "../../service/category"
 
 
 
@@ -25,16 +25,14 @@ const GlobalTableCategory = ({headers, body,isLoading} : TableProps) => {
     const deleteItem = (id:string) => {
         try {
             Notification({title:"Ma'lumot muvaffaqiyatli o'chdi",type:"success"})
-            services.del_worker(id)
+            category.del_category(id)
             
         } catch (error) {
             console.log(error)
         }
         setTimeout(()=>{window.location.reload()},300)
     }
-    // const editItem = (id:string) => {
-    //     console.log(id)
-    // }
+
 
     return (
         <>
@@ -82,13 +80,7 @@ const GlobalTableCategory = ({headers, body,isLoading} : TableProps) => {
                                                             alt="Delete" 
                                                             onClick={()=>deleteItem(item.id)} 
                                                         />
-                                                        {/* <img 
-                                                            src={edit} 
-                                                            alt="Edit" 
-                                                            onClick={()=>editItem(item.id)} 
-                                                            
-                                                        /> */}
-                                                        {/* <Edit/> */}
+                                                        <Edit/>
                                                     </div>
                                                 ): header.value === "index" ? index + 1 : (
                                                     item[header.value]

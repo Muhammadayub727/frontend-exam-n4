@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import { TextField } from '@mui/material';
-import { validationSchemaWorker } from '@validations';
+import { validationSchemaCategory } from '@validations';
 import { PostParamsCategory } from '../../../interfaces/category';
 import {category} from '../../../service'
 import { Notification } from '../../../utils/notification';
@@ -35,7 +35,7 @@ export default function KeepMountedModal() {
 
     const initialValues : PostParamsCategory ={
         category_name:"",
-        category_id:""
+        category_id:"",
     }
 
     const handleSubmit = async (values: PostParamsCategory) => {
@@ -45,7 +45,7 @@ export default function KeepMountedModal() {
             console.log(res)
             Notification({title:"Ma'lumot muvaffaqiyatli qo'shildi",type:"success"})
             handleClose(); 
-            setTimeout(()=>{window.location.reload()},300)
+            setTimeout(()=>{window.location.reload()},400)
         } catch (error) {
             console.log(error)
         }
@@ -71,11 +71,11 @@ export default function KeepMountedModal() {
                         variant="h5"
                         component="h5"
                     >
-                        Worker Create
+                        Category Create
                 </Typography>
                     <Formik
                         initialValues={initialValues}
-                        validationSchema={validationSchemaWorker}
+                        validationSchema={validationSchemaCategory}
                         onSubmit={handleSubmit}
                     >
                         <Form>
