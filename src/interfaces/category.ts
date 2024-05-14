@@ -5,12 +5,13 @@ export interface GetParamsCategory {
 
 export interface PostParamsCategory{
     category_name:string,
-    category_id:string,
+    category_id?:string,
 }
+
 
 export interface Requests{
     get_category:(params:GetParamsCategory)=>any,
     post_category:(params:PostParamsCategory)=>any,
     del_category:(id:string) => any,
-    update_category:(id:string)=>any
+    update_category:(valyu:PostParamsCategory)=>any
 }

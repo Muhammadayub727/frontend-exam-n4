@@ -5,10 +5,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import { TextField } from '@mui/material';
-import { validationSchemaWorker } from '@validations';
-import { createWorkers } from '@global-interface';
+import { validationSchemaCategory } from '@validations';
 import edit from "../../../assets/images/edit.svg"
-import services from '../../../service/services';
+import { PostParamsCategory } from '../../../interfaces/category';
+import category from '../../../service/category'
+
 
     const style = {
     position: 'absolute' as 'absolute',
@@ -25,23 +26,23 @@ import services from '../../../service/services';
 
     
 
-export default function KeepMountedModal() {
+export default function KeepMountedModal({props}:any) {
+    console.log(props);
+    
     const [open, setOpen] = React.useState(false);
     
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const initialValues : createWorkers ={
-        email:"",
-        first_name:"",
-        gender:"",
-        last_name:"",
-        password:""
+    const initialValues : PostParamsCategory ={
+        category_name:   "",
+        category_id:   ""
     }
-    const handleSubmit = async (values : createWorkers) => {
+    const handleSubmit = async (values : PostParamsCategory) => {
+        const params = {...values , category_id:props?.category_id }
         try {
             console.log(values);
-            const res = await services.post_worker(values);
+            const res = await category.update_category(params);
             console.log(res)
             handleClose(); 
             setTimeout(()=>{window.location.reload()},300)
@@ -73,21 +74,22 @@ export default function KeepMountedModal() {
                 </Typography>
                     <Formik
                         initialValues={initialValues}
-                        validationSchema={validationSchemaWorker}
+                        validationSchema={validationSchemaCategory}
                         onSubmit={handleSubmit}
                     >
                         <Form>
                             <Field
-                                name="email"
-                                type="email"
+                                name="category_name"
+                                type="text"
                                 as={TextField}
                                 fullWidth
-                                label="Email"
+                                label={props?.category_name}
+                                placeholder={props?.category_name}
                                 margin="normal"
                                 variant="outlined"
                                 helperText={
                                     <ErrorMessage
-                                        name="email"
+                                        name="category_name"
                                         component="p"
                                         className="text-red-500 text-[15px]"
                                     />

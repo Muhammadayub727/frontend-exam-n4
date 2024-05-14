@@ -6,7 +6,7 @@ const category:Requests = {
     get_category:(params) => request.get(`/v1/categories?page=${params.page}&limit=${params.limit}`),
     post_category: (params)=>request.post(`/v1/category`, params ),
     del_category:(id)=>request.delete(`/v1/category/${id}`),
-    update_category:(id)=>request.put(`/v1/category?${id}`),
+    update_category:(valyu)=>request.put(`/v1/category?${valyu?.category_id}` , valyu),
 }
 
 export default category 

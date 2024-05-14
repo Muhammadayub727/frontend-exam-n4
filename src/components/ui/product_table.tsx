@@ -9,36 +9,38 @@ import  TableSortLabel  from "@mui/material/TableSortLabel"
 import  Paper from "@mui/material/Paper"
 import { TableProps } from "@global-interface"
 import  { Skeleton } from "@mui/material"
-import del from "../../assets/images/delete.svg"
-import { Notification } from "../../utils/notification"
-import { ToastContainer } from "react-toastify"
-import { CategoryEdit } from "@modals"
-import { category } from "@service"
+// import del from "../../assets/images/delete.svg"
+// import { Notification } from "../../utils/notification"
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+// import { ToastContainer } from "react-toastify"
+// import { CategoryEdit } from "@modals"
+// import { category } from "@service"
 
 
 
 
 
-const GlobalTableCategory = ({headers, body,isLoading} : TableProps) => {
+const GlobalTableProduct = ({headers, body,isLoading} : TableProps) => {
 
 
-    const deleteItem = (id:string) => {
-        try {
-            console.log(id)
-            Notification({title:"Ma'lumot muvaffaqiyatli o'chdi",type:"success"})
-            category.del_category(id)
+    // const deleteItem = (id:string) => {
+    //     try {
+    //         console.log(id)
+    //         Notification({title:"Ma'lumot muvaffaqiyatli o'chdi",type:"success"})
+    //         category.del_category(id)
             
             
-        } catch (error) {
-            console.log(error)
-        }
-        setTimeout(()=>{window.location.reload()},300)
-    }
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    //     setTimeout(()=>{window.location.reload()},300)
+    // }
 
 
     return (
         <>
-        <ToastContainer/>
+        {/* <ToastContainer/> */}
             <Box sx={{width: "100%"}}>
             <Paper sx={{width: "100%", mb: 2}}>
                 <TableContainer>
@@ -77,12 +79,8 @@ const GlobalTableCategory = ({headers, body,isLoading} : TableProps) => {
                                             >
                                                 {header.value === "action" ? (
                                                     <div className="flex gap-3 cursor-pointer items-center">
-                                                        <img 
-                                                            src={del} 
-                                                            alt="Delete" 
-                                                            onClick={()=> deleteItem(item?.category_id)} 
-                                                        />
-                                                        <CategoryEdit props={item}/>
+                                                        <VisibilityIcon/>
+                                                        <CloudUploadIcon/>
                                                     </div>
                                                 ): header.value === "index" ? index + 1 : (
                                                     item[header.value]
@@ -102,4 +100,4 @@ const GlobalTableCategory = ({headers, body,isLoading} : TableProps) => {
     )
 }
 
-export default GlobalTableCategory
+export default GlobalTableProduct

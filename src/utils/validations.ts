@@ -10,7 +10,7 @@ export const signInValidationSchema = Yup.object().shape({
 
 
 
-//////////////////////////////////////////////WORKER////////////////
+///////////////////////////////WORKER/////////////////////////////
 export const validationSchemaWorker = Yup.object().shape({
     email: Yup.string().email("Email invalit ").required("Email is required"),
     first_name: Yup.string().required('First name is required').matches(/^[A-Za-z]+$/, 'First name must contain only letters'),
@@ -30,4 +30,19 @@ export const validationSchemaCategory = Yup.object().shape({
 })
 
 
+////////////////////////////////PRODUCTS////////////////////////////
+export const validationSchemaProduct = Yup.object().shape({
+    age_max: Yup.string().required("Age Max required"),
+    age_min: Yup.string().required("Age Min required"),
+    category_id: Yup.string().required("Category id required"),
+    color: Yup.string().required("Color required"),
+    cost: Yup.string().required("Cost required"),
+    count: Yup.string().required("Count required"),
+    description: Yup.string().required("Description required"),
+    discount: Yup.string().required("Discount required"),
+    for_gender: Yup.string().required("ForGender required"),
+    made_in: Yup.string().required("Made In required"),
+    product_name: Yup.string().required("Category name required"),
+    size: Yup.string().required("Size required"),
+})
 
