@@ -41,7 +41,7 @@ export default function KeepMountedModal({props}:any) {
     const handleSubmit = async (values : PostParamsCategory) => {
         const params = {...values , category_id:props?.category_id }
         try {
-            console.log(values);
+            // console.log(values);
             const res = await category.update_category(params);
             console.log(res)
             handleClose(); 
