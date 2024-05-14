@@ -8,6 +8,23 @@ export interface PostParamsCategory{
     category_id?:string,
 }
 
+export interface UpdateData extends PostParamsCategory{
+    category_id:string;
+}
+
+
+// ---------> Interface Srore Category <--------------------
+export interface StoreCategory {
+    isLoader:boolean;
+    data:any[];
+    totlCount:number;
+    getData: (params:GetParamsCategory)=> Promise <any>;
+    postData: (data:PostParamsCategory)=> Promise <any>;
+    deleteData: (id:string)=> Promise <any>;
+    updateData: (data:UpdateData)=> Promise <any>;
+}
+
+
 
 export interface Requests{
     get_category:(params:GetParamsCategory)=>any,

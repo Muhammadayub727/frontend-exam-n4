@@ -16,6 +16,8 @@ export default defineConfig({
       { find : "@service", replacement : "/src/service"},
       { find : "@auth-interface", replacement : "/src/interfaces/auth.ts"},
       { find : "@global-interface", replacement : "/src/interfaces/global.ts"},
+      { find: '@store-categors', replacement: '/src/store/categors'},
+
     ]
   }
 })

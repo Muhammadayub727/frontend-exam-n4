@@ -90,6 +90,88 @@ export default function KeepMountedModal() {
                     >
                         <Form className='float-left'>
                         <Field
+                                name="product_name"
+                                type="string"
+                                as={TextField}
+                                label="Product Name"
+                                sx={{
+                                    width:300,
+                                    m:1,
+                                }}
+                                margin="normal"
+                                variant="outlined"
+                                helpertext={
+                                    <ErrorMessage
+                                        name="product_name"
+                                        component="p"
+                                        className="text-red-500 text-[15px]"
+                                    />
+                                }
+                            />
+                            <Field
+                                name="for_gender"
+                                type="string"
+                                as="select"
+                                label="Gender"
+                                className="w-[300px]  border h-[56px] rounded-md mt-2 m-2"
+                                margin="normal"
+                                variant="outlined"
+                                helpertext={
+                                    <ErrorMessage
+                                        name="for_gender"
+                                        component="p"
+                                        className="text-red-500 text-[15px]"
+                                    />
+                                }
+                            >
+                                {["Male" , "FeMale"  ].map((item) => (
+                                    <option key={item} value={item}>
+                                        {item}
+                                    </option>
+                                ))}
+                            </Field>
+                            <Field
+                                name="made_in"
+                                type="string"
+                                as="select"
+                                label="Made In"
+                                className="w-[300px]  border h-[55px] rounded-md m-2 "
+                                margin="normal"
+                                variant="outlined"
+                                helpertext={
+                                    <ErrorMessage
+                                        name="made_in"
+                                        component="p"
+                                        className="text-red-500 text-[15px]"
+                                    />
+                                }
+                            >
+                                {["Uzbekistan" , "China" , "Turkey","Usa","Russia"  ].map((item) => (
+                                    <option key={item} value={item}>
+                                        {item}
+                                    </option>
+                                ))}
+                            </Field>
+                            <Field
+                                name="size"
+                                type="number"
+                                as={TextField}
+                                label="Size"
+                                sx={{
+                                    width:300,
+                                    m:1,
+                                }}
+                                margin="normal"
+                                variant="outlined"
+                                helpertext={
+                                    <ErrorMessage
+                                        name="size"
+                                        component="p"
+                                        className="text-red-500 text-[15px]"
+                                    />
+                                }
+                            />
+                        <Field
                                 name="age_max"
                                 type="number"
                                 as={TextField}
@@ -100,7 +182,7 @@ export default function KeepMountedModal() {
                                 label="Age Max"
                                 margin="normal"
                                 variant="outlined"
-                                helperText={
+                                helpertext={
                                     <ErrorMessage
                                         name="age_max"
                                         component="p"
@@ -119,7 +201,7 @@ export default function KeepMountedModal() {
                                 label="Age Min"
                                 margin="normal"
                                 variant="outlined"
-                                helperText={
+                                helpertext={
                                     <ErrorMessage
                                         name="age_min"
                                         component="p"
@@ -138,7 +220,7 @@ export default function KeepMountedModal() {
                                 label="Category Id"
                                 margin="normal"
                                 variant="outlined"
-                                helperText={
+                                helpertext={
                                     <ErrorMessage
                                         name="category_id"
                                         component="p"
@@ -157,7 +239,7 @@ export default function KeepMountedModal() {
                                 label="Color"
                                 margin="normal"
                                 variant="outlined"
-                                helperText={
+                                helpertext={
                                     <ErrorMessage
                                         name="color"
                                         component="p"
@@ -176,9 +258,9 @@ export default function KeepMountedModal() {
                                 label="Cost"
                                 margin="normal"
                                 variant="outlined"
-                                helperText={
+                                helpertext={
                                     <ErrorMessage
-                                        name="color"
+                                        name="cost"
                                         component="p"
                                         className="text-red-500 text-[15px]"
                                     />
@@ -195,28 +277,9 @@ export default function KeepMountedModal() {
                                 }}
                                 margin="normal"
                                 variant="outlined"
-                                helperText={
+                                helpertext={
                                     <ErrorMessage
                                         name="count"
-                                        component="p"
-                                        className="text-red-500 text-[15px]"
-                                    />
-                                }
-                            />
-                            <Field
-                                name="description"
-                                type="string"
-                                as={TextField}
-                                label="description"
-                                sx={{
-                                    width:300,
-                                    m:1,
-                                }}
-                                margin="normal"
-                                variant="outlined"
-                                helperText={
-                                    <ErrorMessage
-                                        name="description"
                                         component="p"
                                         className="text-red-500 text-[15px]"
                                     />
@@ -233,7 +296,7 @@ export default function KeepMountedModal() {
                                 }}
                                 margin="normal"
                                 variant="outlined"
-                                helperText={
+                                helpertext={
                                     <ErrorMessage
                                         name="discount"
                                         component="p"
@@ -242,78 +305,17 @@ export default function KeepMountedModal() {
                                 }
                             />
                             <Field
-                                name="for_gender"
+                                label="description"
+                                as={TextField}
+                                sx={{ "& textarea": { color: "#00000", fontSize: "20px" , length: "160px" },width:300, m:1 }}
                                 type="string"
-                                as={TextField}
-                                label="ForGender"
-                                sx={{
-                                    width:300,
-                                    m:1,
-                                }}
-                                margin="normal"
-                                variant="outlined"
-                                helperText={
+                                name="description"
+                                // className="w-[300px]  border h-[55px] rounded-md m-2 mt-4"
+                                helpertext={
                                     <ErrorMessage
-                                        name="for_gender"
-                                        component="p"
-                                        className="text-red-500 text-[15px]"
-                                    />
-                                }
-                            />
-                            <Field
-                                name="made_in"
-                                type="string"
-                                as={TextField}
-                                label="Made In"
-                                sx={{
-                                    width:300,
-                                    m:1,
-                                }}
-                                margin="normal"
-                                variant="outlined"
-                                helperText={
-                                    <ErrorMessage
-                                        name="made_in"
-                                        component="p"
-                                        className="text-red-500 text-[15px]"
-                                    />
-                                }
-                            />
-                            <Field
-                                name="product_name"
-                                type="string"
-                                as={TextField}
-                                label="Product Name"
-                                sx={{
-                                    width:300,
-                                    m:1,
-                                }}
-                                margin="normal"
-                                variant="outlined"
-                                helperText={
-                                    <ErrorMessage
-                                        name="product_name"
-                                        component="p"
-                                        className="text-red-500 text-[15px]"
-                                    />
-                                }
-                            />
-                            <Field
-                                name="size"
-                                type="number"
-                                as={TextField}
-                                label="Size"
-                                sx={{
-                                    width:300,
-                                    m:1,
-                                }}
-                                margin="normal"
-                                variant="outlined"
-                                helperText={
-                                    <ErrorMessage
-                                        name="size"
-                                        component="p"
-                                        className="text-red-500 text-[15px]"
+                                    name="description"
+                                    component="p"
+                                    className="mb-3 text-red-500"
                                     />
                                 }
                             />

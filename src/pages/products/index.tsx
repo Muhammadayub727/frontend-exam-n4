@@ -15,7 +15,7 @@ const Index = () => {
     const getData = async () => {
         setLoading(true)
         try {
-            const respons = await product.get_product({page:1, limit:20})
+            const respons = await product.get_product({page:1, limit:100})
             console.log(respons);
             if(respons.status === 200){
                 setData(respons?.data?.products)

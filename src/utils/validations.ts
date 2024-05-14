@@ -1,5 +1,8 @@
 import * as Yup from "yup";
 
+
+
+//////////////////////////LOGIN///////////////////////////
 export const signInValidationSchema = Yup.object().shape({
     email: Yup.string().email("Email invalit ").required("Email is required"),
     password: Yup.string().matches(
