@@ -22,6 +22,7 @@ interface Header{
 interface BodyItem {
     id: string
     [key: string]: any
+    // product_id:string
 }
 
 export interface TableProps{

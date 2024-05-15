@@ -5,6 +5,7 @@ import {category} from "@service"
 import  Paper from "@mui/material/Paper"
 import  SearchIcon from "@mui/icons-material/Search"
 import {Category} from "@modals"
+import CustomIcons from "../../components/ui/pagination"
 
 const Index = () => {
     
@@ -65,6 +66,7 @@ const Index = () => {
                 <Category/>
             </div>
             <GlobalTableCategory headers={headers} body={data} isLoading={isLoading} />
+            <CustomIcons/>
         </>
     )
 }

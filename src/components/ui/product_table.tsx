@@ -13,6 +13,7 @@ import  { Skeleton } from "@mui/material"
 // import { Notification } from "../../utils/notification"
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { useNavigate } from "react-router-dom"
 // import { ToastContainer } from "react-toastify"
 // import { CategoryEdit } from "@modals"
 // import { category } from "@service"
@@ -23,6 +24,7 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 const GlobalTableProduct = ({headers, body,isLoading} : TableProps) => {
 
+        const navigate = useNavigate()
 
     // const deleteItem = (id:string) => {
     //     try {
@@ -79,7 +81,7 @@ const GlobalTableProduct = ({headers, body,isLoading} : TableProps) => {
                                             >
                                                 {header.value === "action" ? (
                                                     <div className="flex gap-3 cursor-pointer items-center">
-                                                        <VisibilityIcon/>
+                                                        <button onClick={()=>{navigate(`/main/products/${item?.product_id}`)}}  className=' text-gray-500'><VisibilityIcon/></button>
                                                         <CloudUploadIcon/>
                                                     </div>
                                                 ): header.value === "index" ? index + 1 : (

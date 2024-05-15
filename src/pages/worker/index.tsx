@@ -6,6 +6,7 @@ import  Paper from "@mui/material/Paper"
 import {IconButton, InputBase } from "@mui/material"
 import  SearchIcon from "@mui/icons-material/Search"
 import {Worker} from "@modals"
+import CustomIcons from "../../components/ui/pagination"
 
 const Index = () => {
     const [data,setData] = useState([])
@@ -66,6 +67,7 @@ const Index = () => {
                 <Worker/>
             </div>
             <GlobalTable headers={headers} body={data} isLoading={isLoading}/>
+            <CustomIcons/>
         </div>
     )
 }
