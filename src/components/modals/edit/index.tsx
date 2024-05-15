@@ -69,7 +69,7 @@ export default function KeepMountedModal() {
                         variant="h5"
                         component="h5"
                     >
-                        Worker Create
+                        Worker Edit
                 </Typography>
                     <Formik
                         initialValues={initialValues}
