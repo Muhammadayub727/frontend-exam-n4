@@ -19,7 +19,7 @@ const Index = () => {
         try {
             const params ={
                 page:1,
-                limit:20,
+                limit:10,
                 name: change
         }
             const respons = await services.get_worker(params)
