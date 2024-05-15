@@ -11,12 +11,17 @@ import CustomIcons from "../../components/ui/pagination"
 const Index = () => {
     const [data,setData] = useState([])
     const [isLoading,setLoading] = useState(false)
-    
+    const [change , setChange] = useState("")
 
     const getData = async () => {
         setLoading(true)
         try {
-            const respons = await product.get_product({page:1, limit:100})
+            const params ={
+                    page:1,
+                    limit:20,
+                    name: change
+            }
+            const respons = await product.get_product(params)
             console.log(respons);
             if(respons.status === 200){
                 setData(respons?.data?.products)
@@ -34,7 +39,7 @@ const Index = () => {
 
     useEffect(()=>{
         getData()
-    },[])
+    },[change])
     
     const headers = [
         { title: "T/R", value:"index" },
@@ -59,6 +64,7 @@ const Index = () => {
                             sx={{ ml: 1, flex: 1 }}
                             placeholder="Search Products"
                             inputProps={{ 'aria-label': 'search google maps' }}
+                            onChange={(e)=>setChange(e.target.value)}
                         />
                         <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
                             <SearchIcon/>

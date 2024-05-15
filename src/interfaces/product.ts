@@ -1,7 +1,7 @@
 export interface GetParamsProduct{
     page:number,
     limit:number,
-    // name:""
+    name:string
 }
 
 export interface PostParamsProduct{

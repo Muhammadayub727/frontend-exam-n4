@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function CustomIcons() {
 return (
-        <div className='ml-[900px]'>
+        <div className='ml-[850px]'>
                 <Stack spacing={2}>
             <Pagination
                 count={10}

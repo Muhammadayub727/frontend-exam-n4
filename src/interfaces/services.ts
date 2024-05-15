@@ -8,7 +8,8 @@ export interface PostParams {
 
 interface GetParams{
     page:number,
-    limit:number
+    limit:number,
+    name:string
 }
 
 
